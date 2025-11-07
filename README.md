@@ -4,16 +4,16 @@ A comprehensive shopping cart package for Laravel 11/12 with tax calculation, di
 
 ## Features
 
-- **Item Management**: Easily add, update, and remove items from the cart with an intuitive API
-- **Attributes and Options**: Define custom attributes and options for cart items to handle variations like size and color
-- **Tax Calculation**: Built-in support for tax calculations, enabling automatic tax application based on predefined rules
-- **Discounts and Coupons**: Integrate discount codes and coupon functionalities to offer promotions and special offers
-- **Session and Database Storage**: Flexible storage options allow carts to be stored in sessions or the database
-- **Multiple Cart Instances**: Support for multiple cart instances (shopping cart, wishlist, etc.)
-- **High Performance**: Optimized with calculation caching, bulk operations, and efficient database queries
-- **Memory Efficient**: 99% less memory usage with smart data storage
-- **Customizable**: Extend and customize the core functionalities to meet specific business requirements
-- **Easy Integration**: Designed to integrate seamlessly with existing Laravel projects
+- **🧩 Simple Item Management** – Add, update, and remove items with an expressive API.  
+- **🎨 Product Variations & Attributes** – Support for color, size, packaging, and other options.  
+- **💰 Built-in Tax Handling** – Configure global or per-item taxes and retrieve detailed summaries.  
+- **🏷️ Discounts & Coupons** – Apply percentage or fixed discounts, coupon codes, and conditional fees.  
+- **💾 Flexible Storage Drivers** – Use session for temporary carts or database for persistent ones.  
+- **🧺 Multiple Cart Instances** – Create separate carts like “shopping cart,” “wishlist,” or “saved items.”  
+- **📝 Custom Metadata** – Attach custom info like delivery notes or shipping method.  
+- **💵 Currency Formatting** – Format subtotals, taxes, and totals with symbols and localization.  
+- **⚡ Performance Optimized** – Smart caching and minimal queries for large carts.  
+- **🔧 Fully Extensible** – Easily extend core services or override default behavior.
 
 ## Requirements
 
