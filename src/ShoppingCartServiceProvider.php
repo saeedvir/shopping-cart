@@ -51,7 +51,8 @@ class ShoppingCartServiceProvider extends ServiceProvider
 
             // Publish migrations
             $this->publishes([
-                __DIR__.'/../database/migrations/create_shopping_cart_tables.php' => database_path('migrations/'.date('Y_m_d_His').'_create_shopping_cart_tables.php'),
+                __DIR__.'/../database/migrations/2025_01_07_000001_create_shopping_cart_tables.php' => database_path('migrations/'.date('Y_m_d_His', time()).'_create_shopping_cart_tables.php'),
+                __DIR__.'/../database/migrations/2025_01_07_000002_add_cart_indexes.php' => database_path('migrations/'.date('Y_m_d_His', time()+1).'_add_cart_indexes.php'),
             ], 'shopping-cart-migrations');
         }
 
