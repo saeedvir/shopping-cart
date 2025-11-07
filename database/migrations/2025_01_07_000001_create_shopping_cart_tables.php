@@ -12,13 +12,14 @@ return new class extends Migration
         
         Schema::connection($connection)->create(config('shopping-cart.database.carts_table', 'carts'), function (Blueprint $table) {
             $table->id();
-            $table->string('identifier')->unique(); // Session ID or User ID
+            $table->string('identifier'); // Session ID or User ID
             $table->string('instance')->default('default'); // Support multiple cart instances
             $table->json('metadata')->nullable(); // Additional cart data
             $table->timestamp('expires_at')->nullable();
             $table->timestamps();
 
-            $table->index(['identifier', 'instance']);
+            // Unique constraint on identifier + instance combination
+            $table->unique(['identifier', 'instance']);
         });
 
         Schema::connection($connection)->create(config('shopping-cart.database.cart_items_table', 'cart_items'), function (Blueprint $table) {
