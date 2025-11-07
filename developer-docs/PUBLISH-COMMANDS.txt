@@ -1,0 +1,33 @@
+# Git is initialized and files are staged!
+# Run these commands manually to complete the publishing process:
+
+# 1. Create initial commit (run this in Git Bash or CMD, not PowerShell)
+git commit -m "Initial release v1.0.0"
+
+# 2. Add GitHub remote (replace with your repository URL)
+git remote add origin https://github.com/saeedvir/shopping-cart.git
+
+# 3. Rename branch to main
+git branch -M main
+
+# 4. Push to GitHub
+git push -u origin main
+
+# 5. Create and push version tag
+git tag -a v1.0.0 -m "Release version 1.0.0"
+git push origin v1.0.0
+
+# After pushing to GitHub:
+# 1. Go to https://github.com/saeedvir/shopping-cart
+# 2. Click "Releases" → "Create a new release"
+# 3. Choose tag v1.0.0
+# 4. Add release notes from READY-TO-PUBLISH.md
+# 5. Publish release
+
+# Then submit to Packagist:
+# 1. Go to https://packagist.org/packages/submit
+# 2. Enter: https://github.com/saeedvir/shopping-cart
+# 3. Click Submit
+
+# Done! Your package will be available via:
+# composer require saeedvir/shopping-cart
