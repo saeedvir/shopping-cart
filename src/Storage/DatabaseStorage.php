@@ -51,7 +51,8 @@ class DatabaseStorage implements CartStorageInterface
     public function put(string $identifier, array $data, string $instance = 'default'): void
     {
         DB::transaction(function () use ($identifier, $data, $instance) {
-            $cart = Cart::firstOrCreate(
+            // Use updateOrCreate to handle both insert and update cases
+            $cart = Cart::updateOrCreate(
                 [
                     'identifier' => $identifier,
                     'instance' => $instance,
@@ -62,11 +63,8 @@ class DatabaseStorage implements CartStorageInterface
                 ]
             );
 
-            // Update cart metadata and expiration
-            $cart->update([
-                'metadata' => $data['metadata'] ?? [],
-                'expires_at' => $this->getExpirationTime(),
-            ]);
+            // Refresh to get latest data
+            $cart->refresh();
 
             if (isset($data['items']) && !empty($data['items'])) {
                 // Get existing item IDs
