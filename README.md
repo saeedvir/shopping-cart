@@ -290,6 +290,31 @@ $note = Cart::getMetadata('note');
 $allMetadata = Cart::getMetadata();
 ```
 
+### Identifier Helper Methods
+
+Extract user ID or session ID from cart identifiers:
+
+```php
+// Get user ID from identifier (if pattern is "user_")
+$userId = Cart::getUserId();
+// Example: identifier "user_123" returns 123
+// Returns null if not a user pattern
+
+// Get session ID from identifier (if NOT a user pattern)
+$sessionId = Cart::getUserSessionId();
+// Example: identifier "session_abc123" returns "session_abc123"
+// Returns null if it's a user pattern
+
+// Practical usage
+if ($userId = Cart::getUserId()) {
+    // This is a logged-in user's cart
+    $user = User::find($userId);
+} elseif ($sessionId = Cart::getUserSessionId()) {
+    // This is a guest/session cart
+    logger("Guest cart: {$sessionId}");
+}
+```
+
 ### Currency Formatting
 
 Get formatted prices with currency symbols:
@@ -446,6 +471,8 @@ The package fires events for cart operations (when enabled in config):
 | `total()` | Get final total |
 | `setMetadata(string $key, $value)` | Set metadata |
 | `getMetadata(string $key)` | Get metadata |
+| `getUserId()` | Get user ID from identifier (if pattern is "user_") |
+| `getUserSessionId()` | Get session ID from identifier (if NOT a user pattern) |
 
 ### CartItem Methods
 
