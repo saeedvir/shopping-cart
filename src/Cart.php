@@ -395,6 +395,32 @@ class Cart implements Arrayable, Jsonable
     }
 
     /**
+     * Get user ID from cart identifier if pattern is "user_".
+     */
+    public function getUserId(): ?int
+    {
+        if (str_starts_with($this->identifier, 'user_')) {
+            $userId = substr($this->identifier, 5);
+            return is_numeric($userId) ? (int) $userId : null;
+        }
+
+        return null;
+    }
+
+    /**
+     * Get user session ID from cart identifier.
+     * Returns the identifier if it's not a user pattern.
+     */
+    public function getUserSessionId(): ?string
+    {
+        if (!str_starts_with($this->identifier, 'user_')) {
+            return $this->identifier;
+        }
+
+        return null;
+    }
+
+    /**
      * Convert to array.
      */
     public function toArray(): array
