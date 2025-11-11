@@ -7,8 +7,9 @@
 A high-performance shopping cart package for Laravel 11/12 with tax calculation, discounts, coupons, and flexible storage options.
 
 
-[Document for LLMs and AI code editors](https://context7.com/saeedvir/shopping-cart)
-[Chat with AI for This Package](https://context7.com/saeedvir/shopping-cart?tab=chat)
+- [Document for LLMs and AI code editors](https://context7.com/saeedvir/shopping-cart)
+
+- [Chat with AI for This Package](https://context7.com/saeedvir/shopping-cart?tab=chat)
 
 ## ✨ Features
 
