@@ -11,6 +11,8 @@ A high-performance shopping cart package for Laravel 11/12 with tax calculation,
 
 - [Chat with AI for This Package](https://context7.com/saeedvir/shopping-cart?tab=chat)
 
+  - [حمایت مالی از من](https://reymit.ir/saeedvir)
+
 ## ✨ Features
 
 ### Core Features
